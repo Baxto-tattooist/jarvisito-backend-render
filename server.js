@@ -10,12 +10,12 @@ app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
-// Endpoint principal (opcional, pero útil)
+// Endpoint principal
 app.get('/', (req, res) => {
   res.send('Jarvisito Backend is running.');
 });
 
-// Webhook de n8n (el backend lo necesita para recibir la URL)
+// Webhook de n8n
 app.post('/webhook/jarvisito', (req, res) => {
   console.log('Webhook de n8n recibido:', req.body);
   res.status(200).send('Webhook received');
